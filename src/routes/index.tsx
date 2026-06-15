@@ -13,16 +13,16 @@ import barberWorkAsset from "@/assets/equipe-tecnica-negocio.png.asset.json";
 const barberWork = barberWorkAsset.url;
 import audience from "@/assets/audience.jpg";
 import logoAsset from "@/assets/logo-alem-da-cadeira.png.asset.json";
-import turmaCertificadosAsset from "@/assets/turma-certificados.png.asset.json";
-const turmaCertificados = turmaCertificadosAsset.url;
-import equipeCertificadosAsset from "@/assets/equipe-certificados.png.asset.json";
-const equipeCertificados = equipeCertificadosAsset.url;
-import gabrielBarbeariaAsset from "@/assets/gabriel-barbearia.png.asset.json";
-const gabrielBarbearia = gabrielBarbeariaAsset.url;
+import resultadoReal1Asset from "@/assets/resultado-real-1.png.asset.json";
+const resultadoReal1 = resultadoReal1Asset.url;
+import resultadoReal2Asset from "@/assets/resultado-real-2.png.asset.json";
+const resultadoReal2 = resultadoReal2Asset.url;
+import resultadoReal3Asset from "@/assets/resultado-real-3.png.asset.json";
+const resultadoReal3 = resultadoReal3Asset.url;
 import ingressoAsset from "@/assets/ingresso.png.asset.json";
 const ingresso = ingressoAsset.url;
-import gabrielPalco2Asset from "@/assets/gabriel-palco-2.png.asset.json";
-const gabrielPalco2 = gabrielPalco2Asset.url;
+import resultadoReal4Asset from "@/assets/resultado-real-4.png.asset.json";
+const resultadoReal4 = resultadoReal4Asset.url;
 
 const logo = logoAsset.url;
 
