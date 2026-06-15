@@ -7,7 +7,7 @@ import {
   ShieldCheck, ArrowRight, Star, Quote,
 } from "lucide-react";
 import heroEvent from "@/assets/hero-event.jpg";
-import founderAsset from "@/assets/gabriel-palco.png.asset.json";
+import founderAsset from "@/assets/gabriel-assuncao.jpg.asset.json";
 const founder = founderAsset.url;
 import barberWorkAsset from "@/assets/equipe-tecnica-negocio.png.asset.json";
 const barberWork = barberWorkAsset.url;
