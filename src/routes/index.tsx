@@ -13,16 +13,16 @@ import barberWorkAsset from "@/assets/equipe-tecnica-negocio.png.asset.json";
 const barberWork = barberWorkAsset.url;
 import audience from "@/assets/audience.jpg";
 import logoAsset from "@/assets/logo-alem-da-cadeira.png.asset.json";
-import turmaCertificadosAsset from "@/assets/turma-certificados.png.asset.json";
-const turmaCertificados = turmaCertificadosAsset.url;
-import equipeCertificadosAsset from "@/assets/equipe-certificados.png.asset.json";
-const equipeCertificados = equipeCertificadosAsset.url;
-import gabrielBarbeariaAsset from "@/assets/gabriel-barbearia.png.asset.json";
-const gabrielBarbearia = gabrielBarbeariaAsset.url;
+import resultadoReal1Asset from "@/assets/resultado-real-1.png.asset.json";
+const resultadoReal1 = resultadoReal1Asset.url;
+import resultadoReal2Asset from "@/assets/resultado-real-2.png.asset.json";
+const resultadoReal2 = resultadoReal2Asset.url;
+import resultadoReal3Asset from "@/assets/resultado-real-3.png.asset.json";
+const resultadoReal3 = resultadoReal3Asset.url;
 import ingressoAsset from "@/assets/ingresso.png.asset.json";
 const ingresso = ingressoAsset.url;
-import gabrielPalco2Asset from "@/assets/gabriel-palco-2.png.asset.json";
-const gabrielPalco2 = gabrielPalco2Asset.url;
+import resultadoReal4Asset from "@/assets/resultado-real-4.png.asset.json";
+const resultadoReal4 = resultadoReal4Asset.url;
 
 const logo = logoAsset.url;
 
@@ -567,9 +567,14 @@ function Landing() {
 
         <div className="mx-auto max-w-7xl px-6 mt-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[gabrielBarbearia, equipeCertificados, turmaCertificados, gabrielPalco2].map((img, i) => (
+            {[
+              { src: resultadoReal1, alt: "Treinamento prático com alunos na Moderna Barbearia Escola" },
+              { src: resultadoReal2, alt: "Gabriel Assunção com alunos exibindo certificados" },
+              { src: resultadoReal3, alt: "Atendimento e prática real com a comunidade na barbearia escola" },
+              { src: resultadoReal4, alt: "Turma formada com certificados em resultado real" },
+            ].map((img, i) => (
               <div key={i} className="aspect-square rounded-2xl overflow-hidden border border-gold/20 hover:border-gold/60 transition group">
-                <img src={img} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
               </div>
             ))}
           </div>
