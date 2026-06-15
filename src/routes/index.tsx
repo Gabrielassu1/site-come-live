@@ -567,9 +567,14 @@ function Landing() {
 
         <div className="mx-auto max-w-7xl px-6 mt-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[gabrielBarbearia, equipeCertificados, turmaCertificados, gabrielPalco2].map((img, i) => (
+            {[
+              { src: resultadoReal1, alt: "Treinamento prático com alunos na Moderna Barbearia Escola" },
+              { src: resultadoReal2, alt: "Gabriel Assunção com alunos exibindo certificados" },
+              { src: resultadoReal3, alt: "Atendimento e prática real com a comunidade na barbearia escola" },
+              { src: resultadoReal4, alt: "Turma formada com certificados em resultado real" },
+            ].map((img, i) => (
               <div key={i} className="aspect-square rounded-2xl overflow-hidden border border-gold/20 hover:border-gold/60 transition group">
-                <img src={img} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
               </div>
             ))}
           </div>
