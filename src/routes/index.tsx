@@ -185,6 +185,8 @@ function Landing() {
                 src={ingresso}
                 alt="Ingresso Além da Cadeira"
                 className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] rotate-[-2deg] hover:rotate-0 transition-transform duration-500"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
 
