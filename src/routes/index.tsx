@@ -22,7 +22,7 @@ import resultadoReal2Asset from "@/assets/resultado-real-2.png.asset.json";
 const resultadoReal2 = resultadoReal2Asset.url;
 import resultadoReal3Asset from "@/assets/resultado-real-3.png.asset.json";
 const resultadoReal3 = resultadoReal3Asset.url;
-import ingressoAsset from "@/assets/ingresso.png.asset.json";
+import ingressoAsset from "@/assets/ingresso-novo.png.asset.json";
 const ingresso = ingressoAsset.url;
 import resultadoReal4Asset from "@/assets/resultado-real-4.png.asset.json";
 const resultadoReal4 = resultadoReal4Asset.url;
