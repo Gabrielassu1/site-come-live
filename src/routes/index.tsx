@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Calendar, MapPin, Ticket, Users, Check, X, Flame, ChevronDown,
@@ -37,6 +37,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Além da Cadeira — Imersão Presencial" },
       { property: "og:description", content: "02 e 03 de Agosto, São Paulo. Vagas limitadas." },
       { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "preload", as: "image", href: heroEvent, fetchpriority: "high" },
     ],
   }),
   component: Landing,
@@ -141,6 +144,8 @@ function Landing() {
             className="w-full h-full object-cover"
             width={1920}
             height={1080}
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/70 to-background" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
@@ -180,6 +185,8 @@ function Landing() {
                 src={ingresso}
                 alt="Ingresso Além da Cadeira"
                 className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] rotate-[-2deg] hover:rotate-0 transition-transform duration-500"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
 
@@ -759,8 +766,16 @@ function Landing() {
 
       {/* FOOTER */}
       <footer className="border-t border-border py-10">
-        <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <img src={logo} alt="Além da Cadeira" className="h-16 w-auto" />
+        <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
+          <img src={logo} alt="Além da Cadeira" className="h-16 w-auto" loading="lazy" decoding="async" />
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-[0.15em]">
+            <Link to="/politica-de-privacidade" className="hover:text-gold transition-colors">
+              Política de Privacidade
+            </Link>
+            <a href="mailto:contato@alemdacadeira.com" className="hover:text-gold transition-colors">
+              Contato
+            </a>
+          </nav>
           <div className="text-center md:text-right">
             <div>Realização: Moderna Barbearia · Gabriel Assunção © 2026</div>
             <div className="mt-1 text-xs text-muted-foreground/60">Todos os direitos reservados.</div>
