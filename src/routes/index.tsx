@@ -772,9 +772,6 @@ function Landing() {
             <Link to="/politica-de-privacidade" className="hover:text-gold transition-colors">
               Política de Privacidade
             </Link>
-            <a href="mailto:contato@alemdacadeira.com" className="hover:text-gold transition-colors">
-              Contato
-            </a>
           </nav>
           <div className="text-center md:text-right">
             <div>Realização: Moderna Barbearia · Gabriel Assunção © 2026</div>
