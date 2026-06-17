@@ -26,6 +26,7 @@ import ingressoAsset from "@/assets/ingresso-novo.png.asset.json";
 const ingresso = ingressoAsset.url;
 import resultadoReal4Asset from "@/assets/resultado-real-4.png.asset.json";
 const resultadoReal4 = resultadoReal4Asset.url;
+import { LeadCaptureModal } from "@/components/LeadCaptureModal";
 
 const logo = logoAsset.url;
 
@@ -118,8 +119,11 @@ function SectionTitle({ kicker, title, className = "" }: { kicker?: string; titl
 }
 
 function Landing() {
+  const [leadOpen, setLeadOpen] = useState(false);
+  const openLead = (e?: React.MouseEvent) => { e?.preventDefault(); setLeadOpen(true); };
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <LeadCaptureModal open={leadOpen} onClose={() => setLeadOpen(false)} />
       {/* Top utility bar */}
       <div className="bg-gold text-navy-deep py-2 text-center text-[11px] md:text-xs font-bold uppercase tracking-[0.2em]">
         🔥 Últimas vagas do lote atual — São Paulo, 02 e 03 de Agosto
@@ -131,7 +135,7 @@ function Landing() {
           <a href="#" className="flex items-center">
             <img src={logo} alt="Além da Cadeira" className="h-12 md:h-20 w-auto" />
           </a>
-          <GhostButton href="#oferta" className="hidden md:inline-flex">Garantir Vaga</GhostButton>
+          <GhostButton href="#" onClick={openLead} className="hidden md:inline-flex">Garantir Vaga</GhostButton>
         </div>
       </header>
 
@@ -191,10 +195,10 @@ function Landing() {
             </div>
 
             <div className="mt-10 md:mt-12 flex flex-col sm:flex-row gap-3 md:gap-4">
-              <GoldButton href="#oferta">
+              <GoldButton href="#" onClick={openLead}>
                 Quero Participar <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </GoldButton>
-              <GhostButton href="#oferta">Garantir Minha Vaga</GhostButton>
+              <GhostButton href="#" onClick={openLead}>Garantir Minha Vaga</GhostButton>
             </div>
 
             <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-3xl">
@@ -686,7 +690,7 @@ function Landing() {
                 </div>
 
                 <div className="mt-6">
-                  <GoldButton href="https://pay.cakto.com.br/s4xzuwy_913906" className="w-full !py-4 !text-sm md:!text-base">
+                  <GoldButton href="#" onClick={openLead} className="w-full !py-4 !text-sm md:!text-base">
                     Quero Participar <ArrowRight className="w-4 h-4" />
                   </GoldButton>
                 </div>
@@ -757,7 +761,7 @@ function Landing() {
             Ou pode decidir <span className="text-gold font-semibold">evoluir, aprender novas estratégias e descobrir que existe um nível acima da cadeira.</span>
           </p>
           <div className="mt-12">
-            <GoldButton href="#oferta" className="!px-10 md:!px-14 !py-5 md:!py-6 !text-base md:!text-lg animate-pulse-gold">
+            <GoldButton href="#" onClick={openLead} className="!px-10 md:!px-14 !py-5 md:!py-6 !text-base md:!text-lg animate-pulse-gold">
               🔥 Garantir Minha Vaga Agora <ArrowRight className="w-5 h-5" />
             </GoldButton>
           </div>
