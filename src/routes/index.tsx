@@ -38,6 +38,9 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "02 e 03 de Agosto, São Paulo. Vagas limitadas." },
       { property: "og:type", content: "website" },
     ],
+    links: [
+      { rel: "preload", as: "image", href: heroEvent, fetchpriority: "high" },
+    ],
   }),
   component: Landing,
 });
