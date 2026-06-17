@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { X, Loader2 } from "lucide-react";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/s4xzuwy_913906";
+const SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxZIAhZlin4pFt0IqpiX7FY006Mg_cjYCmNjnyRfR2qHkUN9lPDGevzaRZ5Al-P1ag2Ag/exec";
 
 const UFS = [
   "AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG",
@@ -78,7 +79,7 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
     setCepLoading(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -89,10 +90,22 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
     if (!data.endereco.trim() || !data.cidade.trim() || !data.estado) return setError("Preencha o endereço completo.");
 
     setSubmitting(true);
+    const payload = { ...data, capturedAt: new Date().toISOString() };
     try {
-      const payload = { ...data, capturedAt: new Date().toISOString() };
       localStorage.setItem("alemdacadeira_lead", JSON.stringify(payload));
     } catch {}
+
+    // Envia para Google Sheets (no-cors evita bloqueio de CORS do Apps Script)
+    try {
+      await fetch(SHEETS_WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+    } catch {
+      // Não bloqueia o checkout caso a planilha falhe
+    }
 
     const params = new URLSearchParams({
       name: `${data.nome} ${data.sobrenome}`.trim(),
