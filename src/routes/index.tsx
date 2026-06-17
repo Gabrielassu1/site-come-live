@@ -759,8 +759,16 @@ function Landing() {
 
       {/* FOOTER */}
       <footer className="border-t border-border py-10">
-        <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <img src={logo} alt="Além da Cadeira" className="h-16 w-auto" />
+        <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
+          <img src={logo} alt="Além da Cadeira" className="h-16 w-auto" loading="lazy" decoding="async" />
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs uppercase tracking-[0.15em]">
+            <Link to="/politica-de-privacidade" className="hover:text-gold transition-colors">
+              Política de Privacidade
+            </Link>
+            <a href="mailto:contato@alemdacadeira.com" className="hover:text-gold transition-colors">
+              Contato
+            </a>
+          </nav>
           <div className="text-center md:text-right">
             <div>Realização: Moderna Barbearia · Gabriel Assunção © 2026</div>
             <div className="mt-1 text-xs text-muted-foreground/60">Todos os direitos reservados.</div>
