@@ -10,7 +10,7 @@ import heroEventAsset from "@/assets/gabriel-palco-evento.png.asset.json";
 const heroEvent = heroEventAsset.url;
 import founderAsset from "@/assets/gabriel-assuncao.jpg.asset.json";
 const founder = founderAsset.url;
-import barberWorkAsset from "@/assets/equipe-tecnica-negocio.png.asset.json";
+import barberWorkAsset from "@/assets/barbeiro-profissional.png.asset.json";
 const barberWork = barberWorkAsset.url;
 import audience from "@/assets/audience.jpg";
 import logoAsset from "@/assets/logo-alem-da-cadeira.png.asset.json";
