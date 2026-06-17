@@ -13,6 +13,8 @@ const founder = founderAsset.url;
 import barberWorkAsset from "@/assets/barbeiro-profissional.png.asset.json";
 const barberWork = barberWorkAsset.url;
 import audience from "@/assets/audience.jpg";
+import nivelAcimaBgAsset from "@/assets/nivel-acima-bg.png.asset.json";
+const nivelAcimaBg = nivelAcimaBgAsset.url;
 import logoAsset from "@/assets/logo-alem-da-cadeira.png.asset.json";
 import resultadoReal1Asset from "@/assets/resultado-real-1.png.asset.json";
 const resultadoReal1 = resultadoReal1Asset.url;
@@ -728,7 +730,7 @@ function Landing() {
       {/* FINAL CTA */}
       <section className="relative py-32 md:py-40 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={audience} alt="" className="w-full h-full object-cover opacity-30" loading="lazy" />
+          <img src={nivelAcimaBg} alt="" className="w-full h-full object-cover opacity-30" loading="lazy" />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
         </div>
         <div className="relative mx-auto max-w-4xl px-6 text-center">
