@@ -79,7 +79,7 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
     setCepLoading(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -90,10 +90,22 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
     if (!data.endereco.trim() || !data.cidade.trim() || !data.estado) return setError("Preencha o endereço completo.");
 
     setSubmitting(true);
+    const payload = { ...data, capturedAt: new Date().toISOString() };
     try {
-      const payload = { ...data, capturedAt: new Date().toISOString() };
       localStorage.setItem("alemdacadeira_lead", JSON.stringify(payload));
     } catch {}
+
+    // Envia para Google Sheets (no-cors evita bloqueio de CORS do Apps Script)
+    try {
+      await fetch(SHEETS_WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+    } catch {
+      // Não bloqueia o checkout caso a planilha falhe
+    }
 
     const params = new URLSearchParams({
       name: `${data.nome} ${data.sobrenome}`.trim(),
