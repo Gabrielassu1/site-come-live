@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { X, Loader2 } from "lucide-react";
 
-const CHECKOUT_URL = "https://pay.cakto.com.br/s4xzuwy_913906";
+const CHECKOUT_URL = "https://pay.cakto.com.br/38d75vx_932481";
 const SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxZIAhZlin4pFt0IqpiX7FY006Mg_cjYCmNjnyRfR2qHkUN9lPDGevzaRZ5Al-P1ag2Ag/exec";
 
 const UFS = [
