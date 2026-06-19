@@ -59,7 +59,7 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
     };
   }, [open, onClose]);
 
-  const update = <K extends keyof LeadData>(k: K, v: string) =>
+  const update = <K extends keyof LeadData>(k: K, v: LeadData[K]) =>
     setData((d) => ({ ...d, [k]: v }));
 
   const handleCEPBlur = async () => {
