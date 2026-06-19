@@ -90,6 +90,7 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
     if (data.telefone.replace(/\D/g, "").length < 10) return setError("Telefone inválido.");
     if (data.cep.replace(/\D/g, "").length !== 8) return setError("CEP inválido.");
     if (!data.endereco.trim() || !data.cidade.trim() || !data.estado) return setError("Preencha o endereço completo.");
+    if (!data.tipoProfissional) return setError("Selecione se você é dono de barbearia ou colaborador.");
 
     setSubmitting(true);
     const payload = { ...data, capturedAt: new Date().toISOString() };
