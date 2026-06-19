@@ -42,7 +42,7 @@ function maskCEP(v: string) {
 export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
   const [data, setData] = useState<LeadData>({
     nome: "", sobrenome: "", email: "", telefone: "",
-    cep: "", endereco: "", cidade: "", estado: "",
+    cep: "", endereco: "", cidade: "", estado: "", tipoProfissional: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [cepLoading, setCepLoading] = useState(false);
