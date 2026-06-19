@@ -19,6 +19,7 @@ export interface LeadData {
   endereco: string;
   cidade: string;
   estado: string;
+  tipoProfissional: "dono" | "colaborador" | "";
 }
 
 interface LeadCaptureModalProps {
@@ -41,7 +42,7 @@ function maskCEP(v: string) {
 export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
   const [data, setData] = useState<LeadData>({
     nome: "", sobrenome: "", email: "", telefone: "",
-    cep: "", endereco: "", cidade: "", estado: "",
+    cep: "", endereco: "", cidade: "", estado: "", tipoProfissional: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [cepLoading, setCepLoading] = useState(false);
@@ -58,7 +59,7 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
     };
   }, [open, onClose]);
 
-  const update = <K extends keyof LeadData>(k: K, v: string) =>
+  const update = <K extends keyof LeadData>(k: K, v: LeadData[K]) =>
     setData((d) => ({ ...d, [k]: v }));
 
   const handleCEPBlur = async () => {
@@ -89,6 +90,7 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
     if (data.telefone.replace(/\D/g, "").length < 10) return setError("Telefone inválido.");
     if (data.cep.replace(/\D/g, "").length !== 8) return setError("CEP inválido.");
     if (!data.endereco.trim() || !data.cidade.trim() || !data.estado) return setError("Preencha o endereço completo.");
+    if (!data.tipoProfissional) return setError("Selecione se você é dono de barbearia ou colaborador.");
 
     setSubmitting(true);
     const payload = { ...data, capturedAt: new Date().toISOString() };
@@ -107,6 +109,7 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
         endereco: data.endereco,
         cidade: data.cidade,
         estado: data.estado,
+        tipo_profissional: data.tipoProfissional || null,
       });
       if (dbError) console.error("Erro ao salvar lead:", dbError);
     } catch (err) {
@@ -204,6 +207,38 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
               </select>
             </div>
           </div>
+
+          <div>
+            <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-2">
+              Qual seu perfil profissional?
+            </label>
+            <div className="grid grid-cols-2 gap-3">
+              {([
+                { value: "dono", label: "Sou dono de Barbearia" },
+                { value: "colaborador", label: "Sou Colaborador" },
+              ] as const).map((opt) => {
+                const selected = data.tipoProfissional === opt.value;
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => update("tipoProfissional", opt.value)}
+                    className={`rounded-lg border px-3 py-3 text-sm text-left transition-colors ${
+                      selected
+                        ? "border-gold bg-gold/10 text-foreground"
+                        : "border-border bg-background text-muted-foreground hover:border-gold/50"
+                    }`}
+                  >
+                    <span className="block font-semibold">{opt.label}</span>
+                    <span className="block text-[11px] opacity-70 mt-0.5">
+                      {opt.value === "dono" ? "Tenho meu próprio espaço" : "Trabalho para alguém"}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
 
           {error && (
             <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-lg p-3">{error}</p>
