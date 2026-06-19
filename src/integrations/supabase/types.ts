@@ -26,6 +26,7 @@ export type Database = {
           nome: string
           sobrenome: string
           telefone: string
+          tipo_profissional: string | null
         }
         Insert: {
           cep: string
@@ -38,6 +39,7 @@ export type Database = {
           nome: string
           sobrenome: string
           telefone: string
+          tipo_profissional?: string | null
         }
         Update: {
           cep?: string
@@ -50,6 +52,7 @@ export type Database = {
           nome?: string
           sobrenome?: string
           telefone?: string
+          tipo_profissional?: string | null
         }
         Relationships: []
       }
