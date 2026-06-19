@@ -19,6 +19,7 @@ export interface LeadData {
   endereco: string;
   cidade: string;
   estado: string;
+  tipoProfissional: "dono" | "colaborador" | "";
 }
 
 interface LeadCaptureModalProps {
