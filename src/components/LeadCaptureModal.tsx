@@ -109,6 +109,7 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
         endereco: data.endereco,
         cidade: data.cidade,
         estado: data.estado,
+        tipo_profissional: data.tipoProfissional || null,
       });
       if (dbError) console.error("Erro ao salvar lead:", dbError);
     } catch (err) {
