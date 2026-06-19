@@ -96,6 +96,23 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
       localStorage.setItem("alemdacadeira_lead", JSON.stringify(payload));
     } catch {}
 
+    // Salva no banco de dados (Lovable Cloud)
+    try {
+      const { error: dbError } = await supabase.from("leads").insert({
+        nome: data.nome,
+        sobrenome: data.sobrenome,
+        email: data.email,
+        telefone: data.telefone,
+        cep: data.cep,
+        endereco: data.endereco,
+        cidade: data.cidade,
+        estado: data.estado,
+      });
+      if (dbError) console.error("Erro ao salvar lead:", dbError);
+    } catch (err) {
+      console.error("Falha ao salvar lead no banco:", err);
+    }
+
     // Envia para Google Sheets (no-cors evita bloqueio de CORS do Apps Script)
     try {
       await fetch(SHEETS_WEBHOOK_URL, {
