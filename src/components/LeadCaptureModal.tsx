@@ -208,6 +208,38 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
             </div>
           </div>
 
+          <div>
+            <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-2">
+              Qual seu perfil profissional?
+            </label>
+            <div className="grid grid-cols-2 gap-3">
+              {([
+                { value: "dono", label: "Sou dono de Barbearia" },
+                { value: "colaborador", label: "Sou Colaborador" },
+              ] as const).map((opt) => {
+                const selected = data.tipoProfissional === opt.value;
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => update("tipoProfissional", opt.value)}
+                    className={`rounded-lg border px-3 py-3 text-sm text-left transition-colors ${
+                      selected
+                        ? "border-gold bg-gold/10 text-foreground"
+                        : "border-border bg-background text-muted-foreground hover:border-gold/50"
+                    }`}
+                  >
+                    <span className="block font-semibold">{opt.label}</span>
+                    <span className="block text-[11px] opacity-70 mt-0.5">
+                      {opt.value === "dono" ? "Tenho meu próprio espaço" : "Trabalho para alguém"}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+
           {error && (
             <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-lg p-3">{error}</p>
           )}
