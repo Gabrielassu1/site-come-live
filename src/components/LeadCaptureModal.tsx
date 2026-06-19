@@ -128,6 +128,15 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
       // Não bloqueia o checkout caso a planilha falhe
     }
 
+    // Meta Pixel: Lead (formulário preenchido) + InitiateCheckout (indo para Cakto)
+    try {
+      const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq;
+      if (typeof fbq === "function") {
+        fbq("track", "Lead");
+        fbq("track", "InitiateCheckout");
+      }
+    } catch {}
+
     const params = new URLSearchParams({
       name: `${data.nome} ${data.sobrenome}`.trim(),
       email: data.email,
