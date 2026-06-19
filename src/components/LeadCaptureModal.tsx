@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { X, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const CHECKOUT_URL = "https://pay.cakto.com.br/38d75vx_932481";
 const SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxZIAhZlin4pFt0IqpiX7FY006Mg_cjYCmNjnyRfR2qHkUN9lPDGevzaRZ5Al-P1ag2Ag/exec";
@@ -94,6 +95,23 @@ export function LeadCaptureModal({ open, onClose }: LeadCaptureModalProps) {
     try {
       localStorage.setItem("alemdacadeira_lead", JSON.stringify(payload));
     } catch {}
+
+    // Salva no banco de dados (Lovable Cloud)
+    try {
+      const { error: dbError } = await supabase.from("leads").insert({
+        nome: data.nome,
+        sobrenome: data.sobrenome,
+        email: data.email,
+        telefone: data.telefone,
+        cep: data.cep,
+        endereco: data.endereco,
+        cidade: data.cidade,
+        estado: data.estado,
+      });
+      if (dbError) console.error("Erro ao salvar lead:", dbError);
+    } catch (err) {
+      console.error("Falha ao salvar lead no banco:", err);
+    }
 
     // Envia para Google Sheets (no-cors evita bloqueio de CORS do Apps Script)
     try {
