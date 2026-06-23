@@ -371,7 +371,7 @@ function Landing() {
           <SectionTitle kicker="Indicação" title="PARA |QUEM| É" />
           <div className="mt-14 grid sm:grid-cols-2 gap-4">
             {[
-              "Barbeiros iniciantes",
+              "Barbeiros com conhecimento básico",
               "Barbeiros profissionais",
               "Barbeiros que trabalham para alguém",
               "Proprietários de barbearias",
