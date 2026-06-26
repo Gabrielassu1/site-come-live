@@ -167,13 +167,12 @@ function Landing() {
               Imersão Presencial · Edição 2026
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight">
-              EXISTE UM
-              <br />
-              <span className="shine-text">NÍVEL ACIMA</span>
-              <br />
-              DA CADEIRA
+            <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+              Aprenda a faturar de{" "}
+              <span className="shine-text">R$ 20 mil a R$ 50 mil</span>{" "}
+              com sua própria turma de alunos.
             </h1>
+
 
             <p className="mt-6 md:mt-8 text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
               Você aprendeu a cortar cabelo.
