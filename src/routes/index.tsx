@@ -233,7 +233,7 @@ function Landing() {
             </p>
             <p className="mt-4 text-lg leading-relaxed">São aqueles que entendem:</p>
             <ul className="mt-6 space-y-3">
-              {["Marketing", "Posicionamento", "Mentalidade", "Vendas", "Finanças", "Construção de autoridade", "Como ensinar"].map((it) => (
+              {["Como ensinar", "Marketing", "Posicionamento", "Mentalidade", "Vendas", "Finanças", "Construção de autoridade"].map((it) => (
                 <li key={it} className="flex items-center gap-3 text-lg">
                   <span className="w-6 h-6 rounded-full border border-gold flex items-center justify-center text-gold text-xs">
                     <Check className="w-3.5 h-3.5" />
