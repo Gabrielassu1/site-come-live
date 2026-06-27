@@ -251,7 +251,7 @@ function Landing() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="text-xs uppercase tracking-[0.25em] text-gold mb-2">Alto Padrão</div>
-                <div className="font-display text-2xl">Profissionais que dominam técnica + negócio.</div>
+                <div className="font-display text-2xl">Mais do que barbeiros: profissionais que constroem negócios.</div>
               </div>
             </div>
           </div>
