@@ -222,6 +222,41 @@ function Landing() {
       </section>
 
       {/* PAIN SECTION */}
+      {/* OPPORTUNITY */}
+      <section className="relative py-24 md:py-32 bg-gradient-to-b from-transparent via-navy-deep/40 to-transparent">
+        <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <SectionTitle kicker="A Virada" title="E SE EXISTISSE UM |CAMINHO| PARA IR ALÉM?" className="!text-left !mx-0" />
+            <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
+              O mercado mudou. Hoje os profissionais que mais crescem não são apenas os melhores tecnicamente.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed">São aqueles que entendem:</p>
+            <ul className="mt-6 space-y-3">
+              {["Marketing", "Posicionamento", "Mentalidade", "Vendas", "Finanças", "Construção de autoridade"].map((it) => (
+                <li key={it} className="flex items-center gap-3 text-lg">
+                  <span className="w-6 h-6 rounded-full border border-gold flex items-center justify-center text-gold text-xs">
+                    <Check className="w-3.5 h-3.5" />
+                  </span>
+                  <span className="font-medium">{it}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-xl font-display text-gold">E é exatamente isso que você vai aprender.</p>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gold/20 blur-3xl rounded-full" />
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-gold/30 shadow-elevated">
+              <img src={barberWork} alt="Barbeiro profissional em ação" loading="lazy" width={1280} height={896} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="text-xs uppercase tracking-[0.25em] text-gold mb-2">Alto Padrão</div>
+                <div className="font-display text-2xl">Profissionais que dominam técnica + negócio.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <SectionTitle kicker="O Diagnóstico" title="O QUE ESTÁ TE IMPEDINDO DE |CRESCER|?" />
@@ -254,41 +289,6 @@ function Landing() {
                 <br className="hidden md:block" />
                 <span className="text-gradient-gold"> mas nunca aprendem a crescer financeiramente.</span>
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* OPPORTUNITY */}
-      <section className="relative py-24 md:py-32 bg-gradient-to-b from-transparent via-navy-deep/40 to-transparent">
-        <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <SectionTitle kicker="A Virada" title="E SE EXISTISSE UM |CAMINHO| PARA IR ALÉM?" className="!text-left !mx-0" />
-            <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
-              O mercado mudou. Hoje os profissionais que mais crescem não são apenas os melhores tecnicamente.
-            </p>
-            <p className="mt-4 text-lg leading-relaxed">São aqueles que entendem:</p>
-            <ul className="mt-6 space-y-3">
-              {["Marketing", "Posicionamento", "Mentalidade", "Vendas", "Finanças", "Construção de autoridade"].map((it) => (
-                <li key={it} className="flex items-center gap-3 text-lg">
-                  <span className="w-6 h-6 rounded-full border border-gold flex items-center justify-center text-gold text-xs">
-                    <Check className="w-3.5 h-3.5" />
-                  </span>
-                  <span className="font-medium">{it}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 text-xl font-display text-gold">E é exatamente isso que você vai aprender.</p>
-          </div>
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gold/20 blur-3xl rounded-full" />
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-gold/30 shadow-elevated">
-              <img src={barberWork} alt="Barbeiro profissional em ação" loading="lazy" width={1280} height={896} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="text-xs uppercase tracking-[0.25em] text-gold mb-2">Alto Padrão</div>
-                <div className="font-display text-2xl">Profissionais que dominam técnica + negócio.</div>
-              </div>
             </div>
           </div>
         </div>
