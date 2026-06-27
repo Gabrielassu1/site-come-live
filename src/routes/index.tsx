@@ -175,10 +175,11 @@ function Landing() {
 
 
             <p className="mt-6 md:mt-8 text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-              Você aprendeu a cortar cabelo.
+              Milhares de pessoas querem aprender uma profissão e estão <span className="text-gold font-semibold">dispostas a pagar por isso.</span>
+              <br />
               <br />
               <span className="text-foreground">
-                Agora é hora de aprender a construir autoridade, aumentar seu faturamento e transformar sua profissão em um <span className="text-gold font-semibold">negócio de verdade.</span>
+                Eu cobro <span className="text-gold font-semibold">R$ 3.500 por aluno</span> ensinando o básico da barbearia. Agora vou mostrar como você também pode <span className="text-gold font-semibold">transformar seu conhecimento em uma nova fonte de renda.</span>
               </span>
             </p>
 
