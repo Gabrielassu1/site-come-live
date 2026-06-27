@@ -175,7 +175,7 @@ function Landing() {
 
 
             <p className="mt-6 md:mt-8 text-base md:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-              Milhares de pessoas querem aprender uma profissão e estão <span className="text-gold font-semibold">dispostas a pagar por isso.</span>
+              Milhares de pessoas querem aprender sua profissão <span className="text-gold font-semibold">(Cortar cabelo)</span> e estão <span className="text-gold font-semibold">dispostas a pagar muito bem por isso.</span>
               <br />
               <br />
               <span className="text-foreground">
