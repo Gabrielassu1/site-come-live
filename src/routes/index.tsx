@@ -168,9 +168,9 @@ function Landing() {
             </div>
 
             <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-              Aprenda a faturar de{" "}
-              <span className="shine-text">R$ 20 mil a R$ 50 mil</span>{" "}
-              com sua própria turma de alunos.
+              Aprenda a faturar{" "}
+              <span className="shine-text">R$ 50 mil</span>{" "}
+              com suas primeiras turma de alunos.
             </h1>
 
 
